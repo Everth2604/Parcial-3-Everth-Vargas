@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es" class data-skin="light" prefix="og: https://ogp.me/ns#">
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+
+<title>▷ Los móviles gaming más populares para jugar del 2021【 2023 】</title>
+<meta name="description" content="Te presentamos los 5 móviles gaming más populares para jugar del 2021. Las mejores partidas en la palma de tu mano con nuestra guía." />
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+<link rel="canonical" href="https://expertopc.com/los-moviles-gaming-mas-populares-para-jugar-del-2021/" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="▷ Los móviles gaming más populares para jugar del 2021【 2023 】" />
+<meta property="og:description" content="Te presentamos los 5 móviles gaming más populares para jugar del 2021. Las mejores partidas en la palma de tu mano con nuestra guía." />
+<meta property="og:url" content="https://expertopc.com/los-moviles-gaming-mas-populares-para-jugar-del-2021/" />
+<meta property="og:site_name" content="Experto PC" />
+<meta property="article:section" content="Smartphone" />
+<meta property="og:updated_time" content="2021-07-14T15:41:15+02:00" />
+<meta property="og:image" content="https://expertopc.com/wp-content/uploads/mejores-moviles-gaming-2019.jpg" />
+<meta property="og:image:secure_url" content="https://expertopc.com/wp-content/uploads/mejores-moviles-gaming-2019.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="675" />
+<meta property="og:image:alt" content="móviles gaming" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="▷ Los móviles gaming más populares para jugar del 2021【 2023 】" />
+<meta name="twitter:description" content="Te presentamos los 5 móviles gaming más populares para jugar del 2021. Las mejores partidas en la palma de tu mano con nuestra guía." />
+<meta name="twitter:image" content="https://expertopc.com/wp-content/uploads/mejores-moviles-gaming-2019.jpg" />
+<meta name="twitter:label1" content="Escrito por" />
+<meta name="twitter:data1" content="Juan Gomar" />
+<meta name="twitter:label2" content="Tiempo de lectura" />
+<meta name="twitter:data2" content="4 minutos" />
+
+<link rel="amphtml" href="https://expertopc.com/los-moviles-gaming-mas-populares-para-jugar-del-2021/amp/" /><meta name="generator" content="AMP for WP 1.0.86" /><link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
+<link rel="dns-prefetch" href="//googleads.g.doubleclick.net" />
+<link rel="dns-prefetch" href="//adservice.google.com" />
+<link rel="dns-prefetch" href="//adservice.google.ca" />
+<link rel="alternate" type="application/rss+xml" title="Experto PC &raquo; Feed" href="https://expertopc.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Experto PC &raquo; Feed de los comentarios" href="https://expertopc.com/comments/feed/" />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">try{if("undefined"!=typeof localStorage){var tieSkin=localStorage.getItem("tie-skin"),html=document.getElementsByTagName("html")[0].classList,htmlSkin="light";if(html.contains("dark-skin")&&(htmlSkin="dark"),null!=tieSkin&&tieSkin!=htmlSkin){html.add("tie-skin-inverted");var tieSkinInverted=!0}"dark"==tieSkin?html.add("dark-skin"):"light"==tieSkin&&html.remove("dark-skin")}}catch(t){console.log(t)}</script>
+<style type="text/css">
+			:root{
+			
+					--main-nav-background: #1f2024;
+					--main-nav-secondry-background: rgba(0,0,0,0.2);
+					--main-nav-primary-color: #0088ff;
+					--main-nav-contrast-primary-color: #FFFFFF;
+					--main-nav-text-color: #FFFFFF;
+					--main-nav-secondry-text-color: rgba(225,255,255,0.5);
+					--main-nav-main-border-color: rgba(255,255,255,0.07);
+					--main-nav-secondry-border-color: rgba(255,255,255,0.04);
+				
+			}
+		</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="wp-block-library-css" href="https://expertopc.com/wp-includes/css/dist/block-library/style.min.css?ver=6.2.3" type="text/css" media="all" />
+<style id="wp-block-library-theme-inline-css" type="text/css">
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video{margin:0 0 1em}.wp-block-template-part.has-background{margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+<link rel="stylesheet" id="classic-theme-styles-css" href="https://expertopc.com/wp-includes/css/classic-themes.min.css?ver=6.2.3" type="text/css" media="all" />
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="ez-toc-css" href="https://expertopc.com/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=2.0.50" type="text/css" media="all" />
+<style id="ez-toc-inline-css" type="text/css">
+div#ez-toc-container p.ez-toc-title {font-size: 120%;}div#ez-toc-container p.ez-toc-title {font-weight: 500;}div#ez-toc-container ul li {font-size: 95%;}div#ez-toc-container nav ul ul li ul li {font-size: %!important;}
+.ez-toc-container-direction {direction: ltr;}.ez-toc-counter ul{counter-reset: item ;}.ez-toc-counter nav ul li a::before {content: counters(item, ".", decimal) ". ";display: inline-block;counter-increment: item;flex-grow: 0;flex-shrink: 0;margin-right: .2em; float: left;}.ez-toc-widget-direction {direction: ltr;}.ez-toc-widget-container ul{counter-reset: item ;}.ez-toc-widget-container nav ul li a::before {content: counters(item, ".", decimal) ". ";display: inline-block;counter-increment: item;flex-grow: 0;flex-shrink: 0;margin-right: .2em; float: left;}
+</style>
+<link rel="stylesheet" id="cookie-notice-front-css" href="https://expertopc.com/wp-content/plugins/cookie-notice/css/front.min.css?ver=6.2.3" type="text/css" media="all" />
+<link rel="stylesheet" id="aawp-styles-css" href="https://expertopc.com/wp-content/plugins/aawp/public/assets/css/styles.min.css?ver=3.13" type="text/css" media="all" />
+<link rel="stylesheet" id="tie-css-base-css" href="https://expertopc.com/wp-content/themes/jannah/assets/css/base.min.css?ver=6.3.0" type="text/css" media="all" />
+<link rel="stylesheet" id="tie-css-styles-css" href="https://expertopc.com/wp-content/themes/jannah/assets/css/style.min.css?ver=6.3.0" type="text/css" media="all" />
+<link rel="stylesheet" id="tie-css-widgets-css" href="https://expertopc.com/wp-content/themes/jannah/assets/css/widgets.min.css?ver=6.3.0" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="tie-css-helpers-css" href="https://expertopc.com/wp-content/cache/min/1/wp-content/themes/jannah/assets/css/helpers.min.css?ver=1684495627" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="tie-fontawesome5-css" href="https://expertopc.com/wp-content/cache/min/1/wp-content/themes/jannah/assets/css/fontawesome.css?ver=1684495627" type="text/css" media="all" />
+<link data-minify="1" rel="stylesheet" id="tie-css-ilightbox-css" href="https://expertopc.com/wp-content/cache/min/1/wp-content/themes/jannah/assets/ilightbox/dark-skin/skin.css?ver=1684495627" type="text/css" media="all" />
+<link rel="stylesheet" id="tie-css-shortcodes-css" href="https://expertopc.com/wp-content/themes/jannah/assets/css/plugins/shortcodes.min.css?ver=6.3.0" type="text/css" media="all" />
+<link rel="stylesheet" id="tie-css-single-css" href="https://expertopc.com/wp-content/themes/jannah/assets/css/single.min.css?ver=6.3.0" type="text/css" media="all" />
+<link rel="stylesheet" id="tie-css-print-css" href="https://expertopc.com/wp-content/themes/jannah/assets/css/print.css?ver=6.3.0" type="text/css" media="print" />
+<link rel="stylesheet" id="taqyeem-styles-css" href="https://expertopc.com/wp-content/themes/jannah/assets/css/plugins/taqyeem.min.css?ver=6.3.0" type="text/css" media="all" />
+<link rel="stylesheet" id="tie-theme-child-css-css" href="https://expertopc.com/wp-content/themes/jannah-child/style.css?ver=6.2.3" type="text/css" media="all" />
+<style id="tie-theme-child-css-inline-css" type="text/css">
+body{font-family: 'Trebuchet MS',Helvetica,sans-serif;}.logo-text,h1,h2,h3,h4,h5,h6,.the-subtitle{font-family: 'Trebuchet MS',Helvetica,sans-serif;}#main-nav .main-menu > ul > li > a{font-family: 'Trebuchet MS',Helvetica,sans-serif;}blockquote p{font-family: 'Trebuchet MS',Helvetica,sans-serif;}#tie-body{background-image: url(https://expertopc.com/wp-content/themes/jannah/assets/images/patterns/body-bg1.png);}:root:root{--brand-color: #1b98e0;--dark-brand-color: #0066ae;--bright-color: #FFFFFF;--base-color: #2c2f34;}#reading-position-indicator{box-shadow: 0 0 10px rgba( 27,152,224,0.7);}:root:root{--brand-color: #1b98e0;--dark-brand-color: #0066ae;--bright-color: #FFFFFF;--base-color: #2c2f34;}#reading-position-indicator{box-shadow: 0 0 10px rgba( 27,152,224,0.7);}#content a:hover{text-decoration: underline !important;}#top-nav,#top-nav .sub-menu,#top-nav .comp-sub-menu,#top-nav .ticker-content,#top-nav .ticker-swipe,.top-nav-boxed #top-nav .topbar-wrapper,#autocomplete-suggestions.search-in-top-nav,#top-nav .guest-btn:not(:hover){background-color : #f5f5f5;}#top-nav *,#autocomplete-suggestions.search-in-top-nav{border-color: rgba( 0,0,0,0.08);}#top-nav .icon-basecloud-bg:after{color: #f5f5f5;}#top-nav a:not(:hover),#top-nav input,#top-nav #search-submit,#top-nav .fa-spinner,#top-nav .dropdown-social-icons li a span,#top-nav .components > li .social-link:not(:hover) span,#autocomplete-suggestions.search-in-top-nav a{color: #444444;}#top-nav .menu-item-has-children > a:before{border-top-color: #444444;}#top-nav li .menu-item-has-children > a:before{border-top-color: transparent;border-left-color: #444444;}.rtl #top-nav .menu li .menu-item-has-children > a:before{border-left-color: transparent;border-right-color: #444444;}#top-nav input::-moz-placeholder{color: #444444;}#top-nav input:-moz-placeholder{color: #444444;}#top-nav input:-ms-input-placeholder{color: #444444;}#top-nav input::-webkit-input-placeholder{color: #444444;}#top-nav .comp-sub-menu .button:hover,#top-nav .checkout-button,#autocomplete-suggestions.search-in-top-nav .button{background-color: #1b98e0;}#top-nav a:hover,#top-nav .menu li:hover > a,#top-nav .menu > .tie-current-menu > a,#top-nav .components > li:hover > a,#top-nav .components #search-submit:hover,#autocomplete-suggestions.search-in-top-nav .post-title a:hover{color: #1b98e0;}#top-nav .comp-sub-menu .button:hover{border-color: #1b98e0;}#top-nav .tie-current-menu > a:before,#top-nav .menu .menu-item-has-children:hover > a:before{border-top-color: #1b98e0;}#top-nav .menu li .menu-item-has-children:hover > a:before{border-top-color: transparent;border-left-color: #1b98e0;}.rtl #top-nav .menu li .menu-item-has-children:hover > a:before{border-left-color: transparent;border-right-color: #1b98e0;}#top-nav .comp-sub-menu .button:hover,#top-nav .comp-sub-menu .checkout-button,#autocomplete-suggestions.search-in-top-nav .button{color: #FFFFFF;}#top-nav .comp-sub-menu .checkout-button:hover,#autocomplete-suggestions.search-in-top-nav .button:hover{background-color: #007ac2;}#top-nav,#top-nav .comp-sub-menu,#top-nav .tie-weather-widget{color: #777777;}#autocomplete-suggestions.search-in-top-nav .post-meta,#autocomplete-suggestions.search-in-top-nav .post-meta a:not(:hover){color: rgba( 119,119,119,0.7 );}#top-nav .weather-icon .icon-cloud,#top-nav .weather-icon .icon-basecloud-bg,#top-nav .weather-icon .icon-cloud-behind{color: #777777 !important;}#footer{background-color: #444444;}#site-info{background-color: #ffffff;}#footer .posts-list-counter .posts-list-items li.widget-post-list:before{border-color: #444444;}#footer .timeline-widget a .date:before{border-color: rgba(68,68,68,0.8);}#footer .footer-boxed-widget-area,#footer textarea,#footer input:not([type=submit]),#footer select,#footer code,#footer kbd,#footer pre,#footer samp,#footer .show-more-button,#footer .slider-links .tie-slider-nav span,#footer #wp-calendar,#footer #wp-calendar tbody td,#footer #wp-calendar thead th,#footer .widget.buddypress .item-options a{border-color: rgba(255,255,255,0.1);}#footer .social-statistics-widget .white-bg li.social-icons-item a,#footer .widget_tag_cloud .tagcloud a,#footer .latest-tweets-widget .slider-links .tie-slider-nav span,#footer .widget_layered_nav_filters a{border-color: rgba(255,255,255,0.1);}#footer .social-statistics-widget .white-bg li:before{background: rgba(255,255,255,0.1);}.site-footer #wp-calendar tbody td{background: rgba(255,255,255,0.02);}#footer .white-bg .social-icons-item a span.followers span,#footer .circle-three-cols .social-icons-item a .followers-num,#footer .circle-three-cols .social-icons-item a .followers-name{color: rgba(255,255,255,0.8);}#footer .timeline-widget ul:before,#footer .timeline-widget a:not(:hover) .date:before{background-color: #262626;}#footer .widget-title,#footer .widget-title a:not(:hover){color: #dddddd;}#footer,#footer textarea,#footer input:not([type='submit']),#footer select,#footer #wp-calendar tbody,#footer .tie-slider-nav li span:not(:hover),#footer .widget_categories li a:before,#footer .widget_product_categories li a:before,#footer .widget_layered_nav li a:before,#footer .widget_archive li a:before,#footer .widget_nav_menu li a:before,#footer .widget_meta li a:before,#footer .widget_pages li a:before,#footer .widget_recent_entries li a:before,#footer .widget_display_forums li a:before,#footer .widget_display_views li a:before,#footer .widget_rss li a:before,#footer .widget_display_stats dt:before,#footer .subscribe-widget-content h3,#footer .about-author .social-icons a:not(:hover) span{color: #aaaaaa;}#footer post-widget-body .meta-item,#footer .post-meta,#footer .stream-title,#footer.dark-skin .timeline-widget .date,#footer .wp-caption .wp-caption-text,#footer .rss-date{color: rgba(170,170,170,0.7);}#footer input::-moz-placeholder{color: #aaaaaa;}#footer input:-moz-placeholder{color: #aaaaaa;}#footer input:-ms-input-placeholder{color: #aaaaaa;}#footer input::-webkit-input-placeholder{color: #aaaaaa;}#site-info,#site-info ul.social-icons li a:not(:hover) span{color: #999999;}#footer .site-info a:not(:hover){color: #666666;}@media (max-width: 1250px){.share-buttons-sticky{display: none;}}@media only screen and (max-width: 1024px) and (min-width: 768px){.spacer{padding-top:5px;padding-bottom:5px;}}@media only screen and (max-width: 768px) and (min-width: 0px){.spacer{padding-top:5px;padding-bottom:5px;}}
+</style>
+<style id="rocket-lazyload-inline-css" type="text/css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://expertopc.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://expertopc.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.4" id="jquery-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://expertopc.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0" id="jquery-migrate-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="ez-toc-scroll-scriptjs-js-after">window.addEventListener('DOMContentLoaded', function() {
+jQuery(document).ready(function(){document.querySelectorAll(".ez-toc-section").forEach(t=>{t.setAttribute("ez-toc-data-id","#"+decodeURI(t.getAttribute("id")))}),jQuery("a.ez-toc-link").click(function(){let t=jQuery(this).attr("href"),e=jQuery("#wpadminbar"),i=0;30>30&&(i=30),e.length&&(i+=e.height()),jQuery('[ez-toc-data-id="'+decodeURI(t)+'"]').length>0&&(i=jQuery('[ez-toc-data-id="'+decodeURI(t)+'"]').offset().top-i),jQuery("html, body").animate({scrollTop:i},500)})});
+});</script>
+<link rel="https://api.w.org/" href="https://expertopc.com/wp-json/" /><link rel="alternate" type="application/json" href="https://expertopc.com/wp-json/wp/v2/posts/4396" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://expertopc.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://expertopc.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.2.3" />
+<link rel="shortlink" href="https://expertopc.com/?p=4396" />
+<link rel="alternate" type="application/json+oembed" href="https://expertopc.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fexpertopc.com%2Flos-moviles-gaming-mas-populares-para-jugar-del-2021%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://expertopc.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fexpertopc.com%2Flos-moviles-gaming-mas-populares-para-jugar-del-2021%2F&#038;format=xml" />
+<style type="text/css">.aawp .aawp-tb__row--highlight{background-color:#256aaf;}.aawp .aawp-tb__row--highlight{color:#fff;}.aawp .aawp-tb__row--highlight a{color:#fff;}</style><script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+/* <![CDATA[ */
+var taqyeem = {"ajaxurl":"https://expertopc.com/wp-admin/admin-ajax.php" , "your_rating":"Your Rating:"};
+/* ]]> */
+</script>
+<link rel="preload" as="font" href="https://expertopc.com/wp-content/plugins/easy-table-of-contents/vendor/icomoon/fonts/ez-toc-icomoon.woff2" crossorigin><meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="icon" href="https://expertopc.com/wp-content/uploads/2020/04/favicon-experto-pc.png" sizes="32x32" />
+<link rel="icon" href="https://expertopc.com/wp-content/uploads/2020/04/favicon-experto-pc.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://expertopc.com/wp-content/uploads/2020/04/favicon-experto-pc.png" />
+<meta name="msapplication-TileImage" content="https://expertopc.com/wp-content/uploads/2020/04/favicon-experto-pc.png" />
+<style type="text/css" id="wp-custom-css">
+			#dcl_comment_btn {
+background: #08f;
+width: 200px;
+height: 50px;
+border-radius: 5px;
+font-size: 15px;
+font-weight: 700;
+color:#fff;
+}
+
+.ventajas{
+color: green;
+}
+
+.pros{
+color: green;
+background-color: #F4FEF8;
+padding: 10px;
+border: solid 1px;
+}
+
+.desventajas{
+color: red;
+}
+
+.cons{
+color: red;
+background-color: #FEF4F4;
+padding: 10px;
+border: solid 1px;
+}
+
+@media screen and (min-width: 800px) {
+	.spacer {
+		display:none;
+	}
+}
+
+
+
+
+
+
+
+		</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+<body id="tie-body" class="post-template-default single single-post postid-4396 single-format-standard aawp-custom boxed-layout wrapper-has-shadow block-head-4 block-head-5 magazine2 is-thumb-overlay-disabled is-desktop is-header-layout-3 has-header-ad sidebar-right has-sidebar post-layout-7 full-width-title-full-width-media is-standard-format has-mobile-share hide_sidebars cookies-not-set is-ajax-parent-post">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>
+<div class="background-overlay">
+<div id="tie-container" class="site tie-container">
+<div id="tie-wrapper">
+<header id="theme-header" class="theme-header header-layout-3 main-nav-dark main-nav-default-dark main-nav-below main-nav-boxed has-stream-item has-shadow is-stretch-header has-normal-width-logo mobile-header-default">
+<div class="container header-container">
+<div class="tie-row logo-row">
+<div class="logo-wrapper">
+<div class="tie-col-md-4 logo-container clearfix">
+<div id="mobile-header-components-area_1" class="mobile-header-components"><ul class="components"><li class="mobile-component_search custom-menu-link">
+<a href="#" class="tie-search-trigger-mobile">
+<span class="tie-icon-search tie-search-icon" aria-hidden="true"></span>
+<span class="screen-reader-text">Buscar por</span>
+</a>
+</li></ul></div>
+<div id="logo" class="text-logo">
+<a title="Experto PC" href="https://expertopc.com/">
+<div class="logo-text">Experto PC</div> </a>
+</div>
+<div id="mobile-header-components-area_2" class="mobile-header-components"><ul class="components"><li class="mobile-component_menu custom-menu-link"><a href="#" id="mobile-menu-icon" class><span class="tie-mobile-menu-icon nav-icon is-layout-1"></span><span class="screen-reader-text">Menú</span></a></li></ul></div> </div>
+</div>
+<div class="tie-col-md-8 stream-item stream-item-top-wrapper"><div class="stream-item-top"><div class="stream-item-size" style>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9952581027087434" data-ad-slot="3889345520" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></div>
+</div>
+</div>
+<div class="main-nav-wrapper">
+<nav id="main-nav" class="main-nav header-nav" aria-label="Menú de Navegación principal">
+<div class="container">
+<div class="main-menu-wrapper">
+<div id="menu-components-wrap">
+<div class="main-menu main-menu-wrap tie-alignleft">
+<div id="main-nav-menu" class="main-menu header-menu"><ul id="menu-menu" class="menu"><li id="menu-item-114" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-114 menu-item-has-icon"><a href="https://expertopc.com"> <span aria-hidden="true" class="tie-menu-icon fas fa-home"></span> Inicio</a></li>
+<li id="menu-item-2233" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2233"><a href="https://expertopc.com/category/noticias/">Noticias</a></li>
+<li id="menu-item-2235" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2235"><a href="https://expertopc.com/category/tutoriales/">Tutoriales</a></li>
+<li id="menu-item-2232" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-2232"><a href="https://expertopc.com/category/guias/">Guías</a></li>
+<li id="menu-item-2234" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2234"><a href="https://expertopc.com/category/tops/">Tops</a></li>
+<li id="menu-item-3067" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3067"><a href="https://expertopc.com/reviews/">Reviews</a></li>
+</ul></div> </div>
+<ul class="components"> <li class="search-bar menu-item custom-menu-link" aria-label="Buscar">
+<form method="get" id="search" action="https://expertopc.com/">
+<input id="search-input" inputmode="search" type="text" name="s" title="Buscar por" placeholder="Buscar por" />
+<button id="search-submit" type="submit">
+<span class="tie-icon-search tie-search-icon" aria-hidden="true"></span>
+<span class="screen-reader-text">Buscar por</span>
+</button>
+</form>
+</li>
+<li class="skin-icon menu-item custom-menu-link">
+<a href="#" class="change-skin" title="Switch skin">
+<span class="tie-icon-moon change-skin-icon" aria-hidden="true"></span>
+<span class="screen-reader-text">Switch skin</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+			try{if("undefined"!=typeof localStorage){var header,mnIsDark=!1,tnIsDark=!1;(header=document.getElementById("theme-header"))&&((header=header.classList).contains("main-nav-default-dark")&&(mnIsDark=!0),header.contains("top-nav-default-dark")&&(tnIsDark=!0),"dark"==tieSkin?(header.add("main-nav-dark","top-nav-dark"),header.remove("main-nav-light","top-nav-light")):"light"==tieSkin&&(mnIsDark||(header.remove("main-nav-dark"),header.add("main-nav-light")),tnIsDark||(header.remove("top-nav-dark"),header.add("top-nav-light"))))}}catch(a){console.log(a)}
+		</script>
+<div class="container fullwidth-entry-title-wrapper">
+<div class="container-wrapper fullwidth-entry-title">
+<header class="entry-header-outer">
+<nav id="breadcrumb"><a href="https://expertopc.com/"><span class="tie-icon-home" aria-hidden="true"></span> Inicio</a><em class="delimiter">/</em><a href="https://expertopc.com/category/guias/">Guías</a><em class="delimiter">/</em><a href="https://expertopc.com/category/guias/smartphone/">Smartphone</a><em class="delimiter">/</em><span class="current">Los móviles gaming más populares para jugar del 2021</span></nav><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BreadcrumbList","@id":"#Breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"name":"Inicio","@id":"https:\/\/expertopc.com\/"}},{"@type":"ListItem","position":2,"item":{"name":"Gu\u00edas","@id":"https:\/\/expertopc.com\/category\/guias\/"}},{"@type":"ListItem","position":3,"item":{"name":"Smartphone","@id":"https:\/\/expertopc.com\/category\/guias\/smartphone\/"}}]}</script>
+<div class="entry-header">
+<h1 class="post-title entry-title">
+Los móviles gaming más populares para jugar del 2021 </h1>
+<div class="single-post-meta post-meta clearfix"><span class="author-meta single-author with-avatars"><span class="meta-item meta-author-wrapper meta-author-1">
+<span class="meta-author-avatar">
+<a href="https://expertopc.com/author/juan-gomar/"><img alt="Photo of Juan Gomar" src="https://expertopc.com/wp-content/uploads/perfil-140x140.jpg" srcset="https://expertopc.com/wp-content/uploads/perfil-280x280.jpg 2x" class="avatar avatar-140 photo" height="140" width="140" loading="lazy" decoding="async" /></a>
+</span>
+<span class="meta-author"><a href="https://expertopc.com/author/juan-gomar/" class="author-name tie-icon" title="Juan Gomar">Juan Gomar</a></span></span></span><span class="date meta-item tie-icon">13/07/2021</span><span class="meta-item last-updated">Last Updated: 14/07/2021</span></div> </div>
+</header>
+</div>
+</div>
+<div class="container fullwidth-featured-area-wrapper"></div><div id="content" class="site-content container"><div id="main-content-row" class="tie-row main-content-row">
+<div class="main-content tie-col-md-8 tie-col-xs-12" role="main">
+<article id="the-post" class="container-wrapper post-content tie-standard tie-autoloaded-post" data-post-url="https://expertopc.com/los-moviles-gaming-mas-populares-para-jugar-del-2021/" data-post-title="Los móviles gaming más populares para jugar del 2021" data-post-edit="https://expertopc.com/wp-admin/post.php?post=4396&amp;action=edit" data-share-title="Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021" data-share-link="https://expertopc.com/?p=4396" data-share-image="https://expertopc.com/wp-content/uploads/mejores-moviles-gaming-2019.jpg">
+<div class="entry-content entry clearfix">
+<div class="stream-item stream-item-above-post-content"><div class="stream-item-size" style>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9952581027087434" data-ad-slot="3889345520" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div>
+<p>En la actualidad andamos de un lado a otro y pasamos mucho tiempo fuera de casa con poco tiempo para dedicar a eso que tanto nos gusta. Eso sí, siempre tenemos nuestro smartphone en la mano mientras esperamos el metro y vamos montados en el bus. Cualquier momento es bueno para echar una partida a nuestros videojuegos favoritos. Hoy esto es posible gracias a que las grandes tecnológicas están apoyando la creación de terminales específicamente para gamers debido a su alta demanda. Es cierto que, en casi cualquier smartphone del mercado, puedes jugar con relativa facilidad con una <a href="https://queadslcontratar.com/movil/tarifas-datos-ilimitados" target="_blank" rel="noopener"><u>tarifa de datos ilimitada</u></a>. Sin embargo, los móviles gaming están pensados en su totalidad para ejecutar juegos de gran rendimiento haciendo que nos olvidemos de las consolas.</p>
+<p>En este artículo se mostrarán los cinco mejores móviles para gamers del 2021 y las prestaciones necesarias que deben reunir para que elijas el que más te guste. ¿Quieres un smartphone gaming? ¡Sigue leyendo!</p>
+<div id="ez-toc-container" class="ez-toc-v2_0_50 counter-hierarchy ez-toc-counter ez-toc-grey ez-toc-container-direction">
+<div class="ez-toc-title-container">
+<p class="ez-toc-title">&Iacute;ndice de contenidos</p>
+<span class="ez-toc-title-toggle"><a href="#" class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle" aria-label="Toggle Table of Content" role="button"><label for="item-65362c58d034c" aria-hidden="true"><span style="display: flex;align-items: center;width: 35px;height: 30px;justify-content: center;direction:ltr;"><svg style="fill: #f7f7f7;color:#f7f7f7" xmlns="http://www.w3.org/2000/svg" class="list-377408" width="20px" height="20px" viewBox="0 0 24 24" fill="none"><path d="M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z" fill="currentColor"></path></svg><svg style="fill: #f7f7f7;color:#f7f7f7" class="arrow-unsorted-368013" xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 24 24" version="1.2" baseProfile="tiny"><path d="M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z" /></svg></span></label><input type="checkbox" id="item-65362c58d034c"></a></span></div>
+<nav><ul class="ez-toc-list ez-toc-list-level-1 "><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-1" href="#Caracteristicas-de-los-moviles-gaming" title="Características de los móviles gaming">Características de los móviles gaming</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-2" href="#Moviles-gaming-para-jugar-del-2021" title="Móviles gaming para jugar del 2021">Móviles gaming para jugar del 2021</a><ul class="ez-toc-list-level-3"><li class="ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-3" href="#ASUS-ROG-Phone-5" title="ASUS ROG Phone 5">ASUS ROG Phone 5</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-4" href="#Xiaomi-POCO-X3-NFC" title="Xiaomi POCO X3 NFC">Xiaomi POCO X3 NFC</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-5" href="#Black-Shark-3-Pro" title="Black Shark 3 Pro">Black Shark 3 Pro</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-6" href="#Lenovo-Legion-Phone-Duel-2" title="Lenovo Legion Phone Duel 2">Lenovo Legion Phone Duel 2</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-7" href="#Razer-Phone-2" title="Razer Phone 2">Razer Phone 2</a></li></ul></li></ul></nav></div>
+<h2 class="wp-block-heading"><span class="ez-toc-section" id="Caracteristicas-de-los-moviles-gaming"></span>Características de los móviles gaming<span class="ez-toc-section-end"></span></h2>
+<div class="wp-block-image"><figure class="aligncenter size-large"><a href="https://expertopc.com/wp-content/uploads/mejores-moviles-gaming-2019.jpg"><img decoding="async" width="1024" height="576" src="https://expertopc.com/wp-content/uploads/mejores-moviles-gaming-2019-1024x576.jpg" alt="mejores moviles gaming 2019 1" class="wp-image-4405" srcset="https://expertopc.com/wp-content/uploads/mejores-moviles-gaming-2019-1024x576.jpg 1024w, https://expertopc.com/wp-content/uploads/mejores-moviles-gaming-2019-300x169.jpg 300w, https://expertopc.com/wp-content/uploads/mejores-moviles-gaming-2019-768x432.jpg 768w, https://expertopc.com/wp-content/uploads/mejores-moviles-gaming-2019-390x220.jpg 390w, https://expertopc.com/wp-content/uploads/mejores-moviles-gaming-2019.jpg 1200w" sizes="(max-width: 1024px) 100vw, 1024px" title="mejores moviles gaming 2019 2"></a></figure></div>
+<p>Para hablar propiamente de un teléfono móvil para gamers debe reunir una serie de particularidades que pocos poseen de forma tan pronunciada. Éstas son:</p>
+<ul><li>Una dimensión de pantalla y resolución buena.</li><li>El procesador y la memoria RAM deben ser potentes.</li><li>Gran batería y tiempo de carga rápido.</li><li>Excelente refrigeración.</li></ul>
+<p>Cada uno será diferente por sus singularidades o las de la marca, pero todos deberán cumplir con estos puntos de forma sobresaliente. A continuación vamos a saber qué dispositivos gozan de estas propiedades.</p>
+<h2 class="wp-block-heading"><span class="ez-toc-section" id="Moviles-gaming-para-jugar-del-2021"></span>Móviles gaming para jugar del 2021<span class="ez-toc-section-end"></span></h2>
+<h3 class="wp-block-heading"><span class="ez-toc-section" id="ASUS-ROG-Phone-5"></span>ASUS ROG Phone 5<span class="ez-toc-section-end"></span></h3>
+<div class="wp-block-image"><figure class="aligncenter size-large"><a href="https://expertopc.com/wp-content/uploads/ASUS-ROG-Phone-5.jpg"><img decoding="async" loading="lazy" width="530" height="530" src="https://expertopc.com/wp-content/uploads/ASUS-ROG-Phone-5.jpg" alt="ASUS ROG Phone 5" class="wp-image-4397" srcset="https://expertopc.com/wp-content/uploads/ASUS-ROG-Phone-5.jpg 530w, https://expertopc.com/wp-content/uploads/ASUS-ROG-Phone-5-300x300.jpg 300w, https://expertopc.com/wp-content/uploads/ASUS-ROG-Phone-5-150x150.jpg 150w" sizes="(max-width: 530px) 100vw, 530px" title="ASUS ROG Phone 5 3"></a></figure></div>
+<p>Con espectaculares opciones de diseño que recuerdan a las consolas y diversos accesorios para incorporar, este móvil es único para los amantes del videojuego. Entre sus características sobresale su procesador Qualcomm Snapdragon 888 combinado con una enorme pantalla AMOLED de 6,78” y 6000 mAh de batería. Incorpora conectividad WiFi 6E, un sistema de enfriamiento llamado GameCool y una tasa de refresco muy distinguida de 144 Hz. El precio es de 799€.</p>
+<h3 class="wp-block-heading"><span class="ez-toc-section" id="Xiaomi-POCO-X3-NFC"></span>Xiaomi POCO X3 NFC<span class="ez-toc-section-end"></span></h3>
+<div class="wp-block-image"><figure class="aligncenter size-large"><a href="https://expertopc.com/wp-content/uploads/Xiaomi-POCO-X3-NFC.jpg"><img decoding="async" loading="lazy" width="732" height="662" src="https://expertopc.com/wp-content/uploads/Xiaomi-POCO-X3-NFC.jpg" alt="Xiaomi POCO X3 NFC" class="wp-image-4399" srcset="https://expertopc.com/wp-content/uploads/Xiaomi-POCO-X3-NFC.jpg 732w, https://expertopc.com/wp-content/uploads/Xiaomi-POCO-X3-NFC-300x271.jpg 300w" sizes="(max-width: 732px) 100vw, 732px" title="Xiaomi POCO X3 NFC 4"></a></figure></div>
+<p>Xiaomi siempre consigue sorprender con sus poderosos terminales a precios increíbles. En este caso, la empresa ha sacado el POCO X3 NFC con 6 GB de RAM y 64GB de almacenamiento interno. La pantalla casi infinita FHD+ de 6,67” junto a una tasa de refresco de 120Hz lo convierte en una de las mejores alternativas para este 2021. Cumple las expectativas con una batería de 5.160 mAh y la correspondiente carga rápida de 33 W. Cuenta con el procesador Snapdragon 732G combinado con la versión más reciente de MIUI 12. Y todo por 209€. ¿No te parece perfecto?</p>
+<h3 class="wp-block-heading"><span class="ez-toc-section" id="Black-Shark-3-Pro"></span>Black Shark 3 Pro<span class="ez-toc-section-end"></span></h3>
+<div class="wp-block-image"><figure class="aligncenter size-large"><a href="https://expertopc.com/wp-content/uploads/Black-Shark-3-Pro.jpg"><img decoding="async" loading="lazy" width="783" height="864" src="https://expertopc.com/wp-content/uploads/Black-Shark-3-Pro.jpg" alt="Black Shark 3 Pro" class="wp-image-4400" srcset="https://expertopc.com/wp-content/uploads/Black-Shark-3-Pro.jpg 783w, https://expertopc.com/wp-content/uploads/Black-Shark-3-Pro-272x300.jpg 272w, https://expertopc.com/wp-content/uploads/Black-Shark-3-Pro-768x847.jpg 768w" sizes="(max-width: 783px) 100vw, 783px" title="Black Shark 3 Pro 5"></a></figure></div>
+<p>Es una consola hecha móvil con todo lo necesario para disfrutar al máximo de tus tardes de juego desde cualquier lugar. El Black Shark 3 Pro integra una pantalla AMOLED de 7,1”, tasa de refresco de 90 Hz y una resolución Quad HD+. Además, agrega un procesador Qualcomm Snapdragon 865 y el famoso JoyUI. Su batería de 5.000 mAh lo completa y eleva como el móvil gaming gama alta más barato. Su precio en internet suele partir de los 600€.</p>
+<h3 class="wp-block-heading"><span class="ez-toc-section" id="Lenovo-Legion-Phone-Duel-2"></span>Lenovo Legion Phone Duel 2<span class="ez-toc-section-end"></span></h3>
+<div class="wp-block-image"><figure class="aligncenter size-large"><a href="https://expertopc.com/wp-content/uploads/Lenovo-Legion-Phone-Duel-2.jpg"><img decoding="async" loading="lazy" width="660" height="435" src="https://expertopc.com/wp-content/uploads/Lenovo-Legion-Phone-Duel-2.jpg" alt="Lenovo Legion Phone Duel 2" class="wp-image-4402" srcset="https://expertopc.com/wp-content/uploads/Lenovo-Legion-Phone-Duel-2.jpg 660w, https://expertopc.com/wp-content/uploads/Lenovo-Legion-Phone-Duel-2-300x198.jpg 300w" sizes="(max-width: 660px) 100vw, 660px" title="Lenovo Legion Phone Duel 2 6"></a></figure></div>
+<p>Esta marca es muy conocida por sus ordenadores. No obstante, ahora te vamos a mostrar su exquisito fabricación pensada para los gamers más atrevidos. El Legion Phone Duel 2 tiene una dimensión de pantalla AMOLED de 6,94” con 144Hz. Dispone de lo último en conectividad con un Wifi 6 y conexión 5G. Además, sus altavoces llaman la atención de cualquiera que se acerque. Incorpora el Snapdragon 888 y una excelente batería de 5.500 mAh más que suficiente. Por 599,99€ podrás hacerte con uno.</p>
+<h3 class="wp-block-heading"><span class="ez-toc-section" id="Razer-Phone-2"></span>Razer Phone 2<span class="ez-toc-section-end"></span></h3>
+<div class="wp-block-image"><figure class="aligncenter size-large"><a href="https://expertopc.com/wp-content/uploads/Razer-Phone-2.jpg"><img decoding="async" loading="lazy" width="700" height="820" src="https://expertopc.com/wp-content/uploads/Razer-Phone-2.jpg" alt="Razer Phone 2 7" class="wp-image-4403" srcset="https://expertopc.com/wp-content/uploads/Razer-Phone-2.jpg 700w, https://expertopc.com/wp-content/uploads/Razer-Phone-2-256x300.jpg 256w" sizes="(max-width: 700px) 100vw, 700px" title="Razer Phone 2 8"></a></figure></div>
+<p>Obra cumbre de la empresa hasta ahora. El Razer Phone 2 pronto contará con un rival que será su propia versión posterior. A un precio de 499€ muy acertado y con muchas ganas de innovar, se posiciona como uno de los ganadores de esta lista por su gran pantalla UltraMotion QHD de 5,7” y sus 120 Hz de tasa de refresco. No pasa lo mismo con su batería de 4.000 mAh que puede no ser suficiente si pasas muchas horas jugando. Por último, cuenta con el Snapdragon 845 y una refrigeración por cámara de vapor.</p>
+<p>Las prestaciones mencionadas, en caso de querer adquirir un móvil gaming para jugar, son esenciales si no quieres que se quede insuficiente o ineficiente al poco tiempo de comprarlo. Existen otros muchos en el mercado que tienen características muy similares como el Oppo Find X3 Pro, OnePlus 7 Pro o, incluso, el iPhone 12 Pro Max. Este último es el mejor dispositivo móvil que existe, incluso en este sector. Si lo que buscas es ser un gamer profesional, sólo tienes que elegir uno de estos smartphones, una <a href="https://movilexplora.es/fijo-movil/tarifas-movil/datos-ilimitados" target="_blank" rel="noopener"><u>buena tarifa de internet</u></a> y tus juegos online preferidos. ¿Sabes ya cuál será el tuyo?</p>
+</div>
+<div id="post-extra-info">
+<div class="theiaStickySidebar">
+<div class="single-post-meta post-meta clearfix"><span class="author-meta single-author with-avatars"><span class="meta-item meta-author-wrapper meta-author-1">
+<span class="meta-author-avatar">
+<a href="https://expertopc.com/author/juan-gomar/"><img alt="Photo of Juan Gomar" src="https://expertopc.com/wp-content/uploads/perfil-140x140.jpg" srcset="https://expertopc.com/wp-content/uploads/perfil-280x280.jpg 2x" class="avatar avatar-140 photo" height="140" width="140" loading="lazy" decoding="async" /></a>
+</span>
+<span class="meta-author"><a href="https://expertopc.com/author/juan-gomar/" class="author-name tie-icon" title="Juan Gomar">Juan Gomar</a></span></span></span><span class="date meta-item tie-icon">13/07/2021</span><span class="meta-item last-updated">Last Updated: 14/07/2021</span></div> </div>
+</div>
+<div class="clearfix"></div>
+<script id="tie-schema-json" type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Article","dateCreated":"2021-07-13T17:51:54+02:00","datePublished":"2021-07-13T17:51:54+02:00","dateModified":"2021-07-14T15:41:15+02:00","headline":"Los m\u00f3viles gaming m\u00e1s populares para jugar del 2021","name":"Los m\u00f3viles gaming m\u00e1s populares para jugar del 2021","keywords":[],"url":"https:\/\/expertopc.com\/los-moviles-gaming-mas-populares-para-jugar-del-2021\/","description":"En la actualidad andamos de un lado a otro y pasamos mucho tiempo fuera de casa con poco tiempo para dedicar a eso que tanto nos gusta. Eso s\u00ed, siempre tenemos nuestro smartphone en la mano mientras e","copyrightYear":"2021","articleSection":"Smartphone","articleBody":"\nEn la actualidad andamos de un lado a otro y pasamos mucho tiempo fuera de casa con poco tiempo para dedicar a eso que tanto nos gusta. Eso s\u00ed, siempre tenemos nuestro smartphone en la mano mientras esperamos el metro y vamos montados en el bus. Cualquier momento es bueno para echar una partida a nuestros videojuegos favoritos. Hoy esto es posible gracias a que las grandes tecnol\u00f3gicas est\u00e1n apoyando la creaci\u00f3n de terminales espec\u00edficamente para gamers debido a su alta demanda. Es cierto que, en casi cualquier smartphone del mercado, puedes jugar con relativa facilidad con una tarifa de datos ilimitada. Sin embargo, los m\u00f3viles gaming est\u00e1n pensados en su totalidad para ejecutar juegos de gran rendimiento haciendo que nos olvidemos de las consolas.\n\n\n\nEn este art\u00edculo se mostrar\u00e1n los cinco mejores m\u00f3viles para gamers del 2021 y las prestaciones necesarias que deben reunir para que elijas el que m\u00e1s te guste. \u00bfQuieres un smartphone gaming? \u00a1Sigue leyendo!\n\n\n\nCaracter\u00edsticas de los m\u00f3viles gaming\n\n\n\n\n\n\n\nPara hablar propiamente de un tel\u00e9fono m\u00f3vil para gamers debe reunir una serie de particularidades que pocos poseen de forma tan pronunciada. \u00c9stas son:\n\n\n\nUna dimensi\u00f3n de pantalla y resoluci\u00f3n buena.El procesador y la memoria RAM deben ser potentes.Gran bater\u00eda y tiempo de carga r\u00e1pido.Excelente refrigeraci\u00f3n.\n\n\n\nCada uno ser\u00e1 diferente por sus singularidades o las de la marca, pero todos deber\u00e1n cumplir con estos puntos de forma sobresaliente. A continuaci\u00f3n vamos a saber qu\u00e9 dispositivos gozan de estas propiedades.\n\n\n\nM\u00f3viles gaming para jugar del 2021\n\n\n\nASUS ROG Phone 5\n\n\n\n\n\n\n\nCon espectaculares opciones de dise\u00f1o que recuerdan a las consolas y diversos accesorios para incorporar, este m\u00f3vil es \u00fanico para los amantes del videojuego. Entre sus caracter\u00edsticas sobresale su procesador Qualcomm Snapdragon 888 combinado con una enorme pantalla AMOLED de 6,78\u201d y 6000 mAh de bater\u00eda. Incorpora conectividad WiFi 6E, un sistema de enfriamiento llamado GameCool y una tasa de refresco muy distinguida de 144 Hz. El precio es de 799\u20ac.\n\n\n\nXiaomi POCO X3 NFC\n\n\n\n\n\n\n\nXiaomi siempre consigue sorprender con sus poderosos terminales a precios incre\u00edbles. En este caso, la empresa ha sacado el POCO X3 NFC con 6 GB de RAM y 64GB de almacenamiento interno. La pantalla casi infinita FHD+ de 6,67\u201d junto a una tasa de refresco de 120Hz lo convierte en una de las mejores alternativas para este 2021. Cumple las expectativas con una bater\u00eda de 5.160 mAh y la correspondiente carga r\u00e1pida de 33 W. Cuenta con el procesador Snapdragon 732G combinado con la versi\u00f3n m\u00e1s reciente de MIUI 12. Y todo por 209\u20ac. \u00bfNo te parece perfecto?\n\n\n\nBlack Shark 3 Pro\n\n\n\n\n\n\n\nEs una consola hecha m\u00f3vil con todo lo necesario para disfrutar al m\u00e1ximo de tus tardes de juego desde cualquier lugar. El Black Shark 3 Pro integra una pantalla AMOLED de 7,1\u201d, tasa de refresco de 90 Hz y una resoluci\u00f3n Quad HD+. Adem\u00e1s, agrega un procesador Qualcomm Snapdragon 865 y el famoso JoyUI. Su bater\u00eda de 5.000 mAh lo completa y eleva como el m\u00f3vil gaming gama alta m\u00e1s barato. Su precio en internet suele partir de los 600\u20ac.\n\n\n\nLenovo Legion Phone Duel 2\n\n\n\n\n\n\n\nEsta marca es muy conocida por sus ordenadores. No obstante, ahora te vamos a mostrar su exquisito fabricaci\u00f3n pensada para los gamers m\u00e1s atrevidos. El Legion Phone Duel 2 tiene una dimensi\u00f3n de pantalla AMOLED de 6,94\u201d con 144Hz. Dispone de lo \u00faltimo en conectividad con un Wifi 6 y conexi\u00f3n 5G. Adem\u00e1s, sus altavoces llaman la atenci\u00f3n de cualquiera que se acerque. Incorpora el Snapdragon 888 y una excelente bater\u00eda de 5.500 mAh m\u00e1s que suficiente. Por 599,99\u20ac podr\u00e1s hacerte con uno.\n\n\n\nRazer Phone 2\n\n\n\n\n\n\n\nObra cumbre de la empresa hasta ahora. El Razer Phone 2 pronto contar\u00e1 con un rival que ser\u00e1 su propia versi\u00f3n posterior. A un precio de 499\u20ac muy acertado y con muchas ganas de innovar, se posiciona como uno de los ganadores de esta lista por su gran pantalla UltraMotion QHD de 5,7\u201d y sus 120 Hz de tasa de refresco. No pasa lo mismo con su bater\u00eda de 4.000 mAh que puede no ser suficiente si pasas muchas horas jugando. Por \u00faltimo, cuenta con el Snapdragon 845 y una refrigeraci\u00f3n por c\u00e1mara de vapor.\n\n\n\nLas prestaciones mencionadas, en caso de querer adquirir un m\u00f3vil gaming para jugar, son esenciales si no quieres que se quede insuficiente o ineficiente al poco tiempo de comprarlo. Existen otros muchos en el mercado que tienen caracter\u00edsticas muy similares como el Oppo Find X3 Pro, OnePlus 7 Pro o, incluso, el iPhone 12 Pro Max. Este \u00faltimo es el mejor dispositivo m\u00f3vil que existe, incluso en este sector. Si lo que buscas es ser un gamer profesional, s\u00f3lo tienes que elegir uno de estos smartphones, una buena tarifa de internet y tus juegos online preferidos. \u00bfSabes ya cu\u00e1l ser\u00e1 el tuyo?\n","publisher":{"@id":"#Publisher","@type":"Organization","name":"Experto PC","logo":{"@type":"ImageObject","url":"https:\/\/expertopc.com\/wp-content\/uploads\/logo-experto-pc-cabecera.png"},"sameAs":["https:\/\/www.facebook.com\/Experto-PC-108495304223787","https:\/\/twitter.com\/ExpertoPC10"]},"sourceOrganization":{"@id":"#Publisher"},"copyrightHolder":{"@id":"#Publisher"},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/expertopc.com\/los-moviles-gaming-mas-populares-para-jugar-del-2021\/","breadcrumb":{"@id":"#Breadcrumb"}},"author":{"@type":"Person","name":"Juan Gomar","url":"https:\/\/expertopc.com\/author\/juan-gomar\/"},"image":{"@type":"ImageObject","url":"https:\/\/expertopc.com\/wp-content\/uploads\/mejores-moviles-gaming-2019.jpg","width":1200,"height":675}}</script>
+<div id="share-buttons-bottom" class="share-buttons share-buttons-bottom">
+<div class="share-links  icons-text">
+<div class="share-title">
+<span class="tie-icon-share" aria-hidden="true"></span>
+<span> Compartir</span>
+</div>
+<a href="https://www.facebook.com/sharer.php?u=https://expertopc.com/?p=4396" rel="external noopener nofollow" title="Facebook" target="_blank" class="facebook-share-btn  large-share-button" data-raw="https://www.facebook.com/sharer.php?u={post_link}">
+<span class="share-btn-icon tie-icon-facebook"></span> <span class="social-text">Facebook</span>
+</a>
+<a href="https://twitter.com/intent/tweet?text=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021&#038;url=https://expertopc.com/?p=4396" rel="external noopener nofollow" title="Twitter" target="_blank" class="twitter-share-btn  large-share-button" data-raw="https://twitter.com/intent/tweet?text={post_title}&amp;url={post_link}">
+<span class="share-btn-icon tie-icon-twitter"></span> <span class="social-text">Twitter</span>
+</a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&#038;url=https://expertopc.com/los-moviles-gaming-mas-populares-para-jugar-del-2021/&#038;title=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021" rel="external noopener nofollow" title="LinkedIn" target="_blank" class="linkedin-share-btn  large-share-button" data-raw="https://www.linkedin.com/shareArticle?mini=true&amp;url={post_full_link}&amp;title={post_title}">
+<span class="share-btn-icon tie-icon-linkedin"></span> <span class="social-text">LinkedIn</span>
+</a>
+<a href="https://www.tumblr.com/share/link?url=https://expertopc.com/?p=4396&#038;name=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021" rel="external noopener nofollow" title="Tumblr" target="_blank" class="tumblr-share-btn  large-share-button" data-raw="https://www.tumblr.com/share/link?url={post_link}&amp;name={post_title}">
+<span class="share-btn-icon tie-icon-tumblr"></span> <span class="social-text">Tumblr</span>
+</a>
+<a href="https://pinterest.com/pin/create/button/?url=https://expertopc.com/?p=4396&#038;description=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021&#038;media=https://expertopc.com/wp-content/uploads/mejores-moviles-gaming-2019.jpg" rel="external noopener nofollow" title="Pinterest" target="_blank" class="pinterest-share-btn  large-share-button" data-raw="https://pinterest.com/pin/create/button/?url={post_link}&amp;description={post_title}&amp;media={post_img}">
+<span class="share-btn-icon tie-icon-pinterest"></span> <span class="social-text">Pinterest</span>
+</a>
+<a href="https://reddit.com/submit?url=https://expertopc.com/?p=4396&#038;title=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021" rel="external noopener nofollow" title="Reddit" target="_blank" class="reddit-share-btn  large-share-button" data-raw="https://reddit.com/submit?url={post_link}&amp;title={post_title}">
+<span class="share-btn-icon tie-icon-reddit"></span> <span class="social-text">Reddit</span>
+</a>
+<a href="https://api.whatsapp.com/send?text=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021%20https://expertopc.com/?p=4396" rel="external noopener nofollow" title="WhatsApp" target="_blank" class="whatsapp-share-btn  large-share-button" data-raw="https://api.whatsapp.com/send?text={post_title}%20{post_link}">
+<span class="share-btn-icon tie-icon-whatsapp"></span> <span class="social-text">WhatsApp</span>
+</a>
+<a href="https://telegram.me/share/url?url=https://expertopc.com/?p=4396&text=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021" rel="external noopener nofollow" title="Telegram" target="_blank" class="telegram-share-btn  large-share-button" data-raw="https://telegram.me/share/url?url={post_link}&text={post_title}">
+<span class="share-btn-icon tie-icon-paper-plane"></span> <span class="social-text">Telegram</span>
+</a>
+<a href="viber://forward?text=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021%20https://expertopc.com/?p=4396" rel="external noopener nofollow" title="Viber" target="_blank" class="viber-share-btn  large-share-button" data-raw="viber://forward?text={post_title}%20{post_link}">
+<span class="share-btn-icon tie-icon-phone"></span> <span class="social-text">Viber</span>
+</a>
+<a href="https://line.me/R/msg/text/?Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021%20https://expertopc.com/?p=4396" rel="external noopener nofollow" title="Line" target="_blank" class="line-share-btn  large-share-button" data-raw="https://line.me/R/msg/text/?{post_title}%20{post_link}">
+<span class="share-btn-icon tie-icon-line"></span> <span class="social-text">Line</span>
+</a> </div>
+</div>
+</article>
+<div class="post-components">
+<div class="about-author container-wrapper about-author-1">
+<div class="author-avatar">
+<a href="https://expertopc.com/author/juan-gomar/">
+<img alt="Photo of Juan Gomar" src="https://expertopc.com/wp-content/uploads/perfil-180x180.jpg" srcset="https://expertopc.com/wp-content/uploads/perfil-360x360.jpg 2x" class="avatar avatar-180 photo" height="180" width="180" loading="lazy" decoding="async" /> </a>
+</div>
+<div class="author-info">
+<h3 class="author-name"><a href="https://expertopc.com/author/juan-gomar/">Juan Gomar</a></h3>
+<div class="author-bio">
+Apasionado de la informática, los videojuegos y la tecnología en general. En este blog encontrarás mis mejores artículos para ayudarte en todas las dudas que tengas. </div>
+<ul class="social-icons">
+<li class="social-icons-item">
+<a href="https://expertopc.com" rel="external noopener nofollow" target="_blank" class="social-link url-social-icon">
+<span class="tie-icon-home" aria-hidden="true"></span>
+<span class="screen-reader-text">Sitio web</span>
+</a>
+</li>
+</ul> </div>
+<div class="clearfix"></div>
+</div>
+</div>
+</div>
+<aside class="sidebar tie-col-md-4 tie-col-xs-12 normal-side is-sticky" aria-label="Barra lateral principal">
+<div class="theiaStickySidebar">
+<div class="widget social-icons-widget widget-content-only"><ul class="solid-social-icons is-centered"><li class="social-icons-item"><a class="social-link facebook-social-icon" rel="external noopener nofollow" target="_blank" href="https://www.facebook.com/Experto-PC-108495304223787"><span class="tie-social-icon tie-icon-facebook"></span><span class="screen-reader-text">Facebook</span></a></li><li class="social-icons-item"><a class="social-link twitter-social-icon" rel="external noopener nofollow" target="_blank" href="https://twitter.com/ExpertoPC10"><span class="tie-social-icon tie-icon-twitter"></span><span class="screen-reader-text">Twitter</span></a></li></ul>
+<div class="clearfix"></div></div><div id="posts-list-widget-2" class="container-wrapper widget posts-list"><div class="widget-title the-global-title has-block-head-4"><div class="the-subtitle">Últimas publicaciones<span class="widget-title-icon tie-icon"></span></div></div><div class="widget-posts-list-wrapper"><div class="widget-posts-list-container" data-current="1" data-query="{'number':'6','offset':'','order':'latest','id':['115','91','100','97','96','112','113','87','6','35','114','84','48','99','109','110','93','111','98','95','82','4','94','116','1','101','85','31']}" data-style="{'exclude_current':4396}"><ul class="posts-list-items widget-posts-wrapper">
+<li class="widget-single-post-item widget-post-list tie-standard">
+<div class="post-widget-thumbnail">
+<a aria-label="Los videojuegos de fútbol que quedaron en nuestra retina" href="https://expertopc.com/videojuegos-de-futbol-que-quedaron-en-nuestra-retina/" class="post-thumb"><img width="220" height="150" src="https://expertopc.com/wp-content/uploads/gratis-persona-que-sostiene-la-almohadilla-del-jue-220x150.jpeg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="Gratis Persona Que Sostiene La Almohadilla Del Juego Foto de stock" decoding="async" loading="lazy" title="gratis persona que sostiene la almohadilla del jue 17"></a> </div>
+<div class="post-widget-body ">
+<a class="post-title the-subtitle" href="https://expertopc.com/videojuegos-de-futbol-que-quedaron-en-nuestra-retina/">Los videojuegos de fútbol que quedaron en nuestra retina</a>
+<div class="post-meta">
+<span class="date meta-item tie-icon">04/10/2023</span> </div>
+</div>
+</li>
+<li class="widget-single-post-item widget-post-list tie-standard">
+<div class="post-widget-thumbnail">
+<a aria-label="¿Es posible hackear tu móvil y usar tus E-Wallets?" href="https://expertopc.com/es-posible-hackear-tu-movil-y-usar-tus-e-wallets/" class="post-thumb"><img width="220" height="150" src="https://expertopc.com/wp-content/uploads/telefono-inteligente-samsung-android-negro-que-mue-220x150.jpeg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="teléfono inteligente Samsung Android negro que muestra iconos" decoding="async" loading="lazy" title="telefono inteligente samsung android negro que mue 18"></a> </div>
+<div class="post-widget-body ">
+<a class="post-title the-subtitle" href="https://expertopc.com/es-posible-hackear-tu-movil-y-usar-tus-e-wallets/">¿Es posible hackear tu móvil y usar tus E-Wallets?</a>
+<div class="post-meta">
+<span class="date meta-item tie-icon">19/05/2023</span> </div>
+</div>
+</li>
+<li class="widget-single-post-item widget-post-list tie-standard">
+<div class="post-widget-thumbnail">
+<a aria-label="5 dudas habituales al elegir entre comprar un portátil o una tablet" href="https://expertopc.com/dudas-al-elegir-entre-portatil-o-tablet/" class="post-thumb"><img width="220" height="150" src="https://expertopc.com/wp-content/uploads/5-dudas-habituales-al-elegir-entre-comprar-un-portatil-o-una-tablet-220x150.jpg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="5 dudas habituales al elegir entre comprar un portatil o una tablet 19" decoding="async" loading="lazy" title="5 dudas habituales al elegir entre comprar un portatil o una tablet 20"></a> </div>
+<div class="post-widget-body ">
+<a class="post-title the-subtitle" href="https://expertopc.com/dudas-al-elegir-entre-portatil-o-tablet/">5 dudas habituales al elegir entre comprar un portátil o una tablet</a>
+<div class="post-meta">
+<span class="date meta-item tie-icon">07/02/2023</span> </div>
+</div>
+</li>
+<li class="widget-single-post-item widget-post-list tie-standard">
+<div class="post-widget-thumbnail">
+<a aria-label="Cómo funciona Google Drive y sus ventajas" href="https://expertopc.com/como-funciona-google-drive-y-sus-ventajas/" class="post-thumb"><img width="220" height="150" src="https://expertopc.com/wp-content/uploads/Como-funciona-Google-Drive-y-sus-ventajas-220x150.jpeg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="Como funciona Google Drive y sus ventajas 21" decoding="async" loading="lazy" title="Como funciona Google Drive y sus ventajas 22"></a> </div>
+<div class="post-widget-body ">
+<a class="post-title the-subtitle" href="https://expertopc.com/como-funciona-google-drive-y-sus-ventajas/">Cómo funciona Google Drive y sus ventajas</a>
+<div class="post-meta">
+<span class="date meta-item tie-icon">03/02/2023</span> </div>
+</div>
+</li>
+<li class="widget-single-post-item widget-post-list tie-standard">
+<div class="post-widget-thumbnail">
+<a aria-label="Los mejores grupos de Telegram para ligar y tener citas" href="https://expertopc.com/los-mejores-grupos-de-telegram-para-ligar-y-tener-citas/" class="post-thumb"><img width="220" height="150" src="https://expertopc.com/wp-content/uploads/Los-mejores-grupos-de-Telegram-para-ligar-y-tener-citas-220x150.png" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="Los mejores grupos de Telegram para ligar y tener citas 23" decoding="async" loading="lazy" title="Los mejores grupos de Telegram para ligar y tener citas 24"></a> </div>
+<div class="post-widget-body ">
+<a class="post-title the-subtitle" href="https://expertopc.com/los-mejores-grupos-de-telegram-para-ligar-y-tener-citas/">Los mejores grupos de Telegram para ligar y tener citas</a>
+<div class="post-meta">
+<span class="date meta-item tie-icon">20/09/2022</span> </div>
+</div>
+</li>
+<li class="widget-single-post-item widget-post-list tie-standard">
+<div class="post-widget-thumbnail">
+<a aria-label="Los mejores anime gore para ver en 2022" href="https://expertopc.com/mejores-anime-gore/" class="post-thumb"><img width="220" height="150" src="https://expertopc.com/wp-content/uploads/Los-mejores-anime-gore-para-ver-en-2022-220x150.jpg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="Los mejores anime gore para ver en 2022 25" decoding="async" loading="lazy" title="Los mejores anime gore para ver en 2022 26"></a> </div>
+<div class="post-widget-body ">
+<a class="post-title the-subtitle" href="https://expertopc.com/mejores-anime-gore/">Los mejores anime gore para ver en 2022</a>
+<div class="post-meta">
+<span class="date meta-item tie-icon">19/09/2022</span> </div>
+</div>
+</li>
+</ul></div><div class="widget-pagination-wrapper">
+<ul class="slider-arrow-nav">
+<li>
+<a class="widget-pagination prev-posts pagination-disabled" href="#">
+<span class="tie-icon-angle-left" aria-hidden="true"></span>
+<span class="screen-reader-text">Página anterior</span>
+</a>
+</li>
+<li>
+<a class="widget-pagination next-posts" href="#">
+<span class="tie-icon-angle-right" aria-hidden="true"></span>
+<span class="screen-reader-text">Página siguiente</span>
+</a>
+</li>
+</ul>
+</div></div><div class="clearfix"></div></div> </div>
+</aside>
+</div>
+<script type="rocketlazyloadscript">var tieAutoLoadPosts = [{"share_title":"C%C3%B3mo%20poner%20pantalla%20completa%20con%20el%20teclado","share_link":"https:\/\/expertopc.com\/?p=4382","share_full_link":"https:\/\/expertopc.com\/como-poner-pantalla-completa-con-el-teclado\/","share_image":"https:\/\/expertopc.com\/wp-content\/uploads\/Como-poner-pantalla-completa-con-el-teclado.png","id":4382,"url":"https:\/\/expertopc.com\/como-poner-pantalla-completa-con-el-teclado\/","edit_url":"https:\/\/expertopc.com\/wp-admin\/post.php?post=4382&amp;action=edit","title":"C\u00f3mo poner pantalla completa con el teclado","src":"https:\/\/expertopc.com\/como-poner-pantalla-completa-con-el-teclado\/?tie-ajax-post=1"},{"share_title":"C%C3%B3mo%20activar%20Bluetooth%20en%20Windows%2010","share_link":"https:\/\/expertopc.com\/?p=4345","share_full_link":"https:\/\/expertopc.com\/como-activar-bluetooth-en-windows-10\/","share_image":"https:\/\/expertopc.com\/wp-content\/uploads\/Como-activar-Bluetooth-en-Windows-10.svg","id":4345,"url":"https:\/\/expertopc.com\/como-activar-bluetooth-en-windows-10\/","edit_url":"https:\/\/expertopc.com\/wp-admin\/post.php?post=4345&amp;action=edit","title":"C\u00f3mo activar Bluetooth en Windows 10","src":"https:\/\/expertopc.com\/como-activar-bluetooth-en-windows-10\/?tie-ajax-post=1"},{"share_title":"C%C3%B3mo%20descargar%20Nero%20General%20CleanTool%20gratis%20en%20Espa%C3%B1ol","share_link":"https:\/\/expertopc.com\/?p=4335","share_full_link":"https:\/\/expertopc.com\/nero-general-clean-tool\/","share_image":"https:\/\/expertopc.com\/wp-content\/uploads\/Nero-General-CleanTool.jpg","id":4335,"url":"https:\/\/expertopc.com\/nero-general-clean-tool\/","edit_url":"https:\/\/expertopc.com\/wp-admin\/post.php?post=4335&amp;action=edit","title":"C\u00f3mo descargar Nero General CleanTool gratis en Espa\u00f1ol","src":"https:\/\/expertopc.com\/nero-general-clean-tool\/?tie-ajax-post=1"},{"share_title":"Software%20Reporter%20Tool%2C%20qu%C3%A9%20es%20y%20c%C3%B3mo%20eliminarlo","share_link":"https:\/\/expertopc.com\/?p=4318","share_full_link":"https:\/\/expertopc.com\/software-reporter-tool-que-es-y-como-eliminarlo\/","share_image":"https:\/\/expertopc.com\/wp-content\/uploads\/Como-eliminar-Software-Reporter-Tool-de-Chrome.jpg","id":4318,"url":"https:\/\/expertopc.com\/software-reporter-tool-que-es-y-como-eliminarlo\/","edit_url":"https:\/\/expertopc.com\/wp-admin\/post.php?post=4318&amp;action=edit","title":"Software Reporter Tool, qu\u00e9 es y c\u00f3mo eliminarlo","src":"https:\/\/expertopc.com\/software-reporter-tool-que-es-y-como-eliminarlo\/?tie-ajax-post=1"},{"share_title":"Asus%20Rog%20Strix%20Scope%20RX%2C%20review%20en%20espa%C3%B1ol","share_link":"https:\/\/expertopc.com\/?p=4260","share_full_link":"https:\/\/expertopc.com\/review-asus-rog-strix-scope-rx\/","share_image":"https:\/\/expertopc.com\/wp-content\/uploads\/Asus_Rog_Strix_Scope_RX_cabecera.jpg","id":4260,"url":"https:\/\/expertopc.com\/review-asus-rog-strix-scope-rx\/","edit_url":"https:\/\/expertopc.com\/wp-admin\/post.php?post=4260&amp;action=edit","title":"Asus Rog Strix Scope RX, review en espa\u00f1ol","src":"https:\/\/expertopc.com\/review-asus-rog-strix-scope-rx\/?tie-ajax-post=1"}];</script>
+<div id="tie-infinte-posts-iframes-wrapper">
+<div id="tie-infinte-posts-iframes">
+</div>
+<div id="tie-infinte-posts-loading"><div class="loader-overlay"><div class="spinner-circle"></div></div></div>
+</div>
+</div>
+<footer id="footer" class="site-footer dark-skin dark-widgetized-area">
+<div id="site-info" class="site-info">
+<div class="container">
+<div class="tie-row">
+<div class="tie-col-md-12">
+<div class="copyright-text copyright-text-first">&copy; Copyright 2023, Todos los derechos reservados |&nbsp; <span Creado por Experto PC. < br>
+<a href="https://expertopc.com/contacto/" target="_blank" rel="nofollow noopener">Contacto</a> - <a href="https://expertopc.com/aviso-legal/" target="_blank" rel="nofollow noopener">Aviso legal</a> - <a href="https://expertopc.com/politica-de-privacidad/" target="_blank" rel="nofollow noopener">Política de privacidad</a> - <a href="https://expertopc.com/politica-de-cookies/" target="_blank" rel="nofollow noopener">Política de cookies</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<div id="share-buttons-sticky" class="share-buttons share-buttons-sticky">
+<div class="share-links  share-left icons-only">
+<a href="https://www.facebook.com/sharer.php?u=https://expertopc.com/?p=4396" rel="external noopener nofollow" title="Facebook" target="_blank" class="facebook-share-btn " data-raw="https://www.facebook.com/sharer.php?u={post_link}">
+<span class="share-btn-icon tie-icon-facebook"></span> <span class="screen-reader-text">Facebook</span>
+</a>
+<a href="https://twitter.com/intent/tweet?text=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021&#038;url=https://expertopc.com/?p=4396" rel="external noopener nofollow" title="Twitter" target="_blank" class="twitter-share-btn " data-raw="https://twitter.com/intent/tweet?text={post_title}&amp;url={post_link}">
+<span class="share-btn-icon tie-icon-twitter"></span> <span class="screen-reader-text">Twitter</span>
+</a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&#038;url=https://expertopc.com/los-moviles-gaming-mas-populares-para-jugar-del-2021/&#038;title=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021" rel="external noopener nofollow" title="LinkedIn" target="_blank" class="linkedin-share-btn " data-raw="https://www.linkedin.com/shareArticle?mini=true&amp;url={post_full_link}&amp;title={post_title}">
+<span class="share-btn-icon tie-icon-linkedin"></span> <span class="screen-reader-text">LinkedIn</span>
+</a>
+<a href="https://www.tumblr.com/share/link?url=https://expertopc.com/?p=4396&#038;name=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021" rel="external noopener nofollow" title="Tumblr" target="_blank" class="tumblr-share-btn " data-raw="https://www.tumblr.com/share/link?url={post_link}&amp;name={post_title}">
+<span class="share-btn-icon tie-icon-tumblr"></span> <span class="screen-reader-text">Tumblr</span>
+</a>
+<a href="https://pinterest.com/pin/create/button/?url=https://expertopc.com/?p=4396&#038;description=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021&#038;media=https://expertopc.com/wp-content/uploads/mejores-moviles-gaming-2019.jpg" rel="external noopener nofollow" title="Pinterest" target="_blank" class="pinterest-share-btn " data-raw="https://pinterest.com/pin/create/button/?url={post_link}&amp;description={post_title}&amp;media={post_img}">
+<span class="share-btn-icon tie-icon-pinterest"></span> <span class="screen-reader-text">Pinterest</span>
+</a>
+<a href="https://reddit.com/submit?url=https://expertopc.com/?p=4396&#038;title=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021" rel="external noopener nofollow" title="Reddit" target="_blank" class="reddit-share-btn " data-raw="https://reddit.com/submit?url={post_link}&amp;title={post_title}">
+<span class="share-btn-icon tie-icon-reddit"></span> <span class="screen-reader-text">Reddit</span>
+</a>
+<a href="https://web.skype.com/share?url=https://expertopc.com/?p=4396&#038;text=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021" rel="external noopener nofollow" title="Skype" target="_blank" class="skype-share-btn " data-raw="https://web.skype.com/share?url={post_link}&text={post_title}">
+<span class="share-btn-icon tie-icon-skype"></span> <span class="screen-reader-text">Skype</span>
+</a>
+<a href="fb-messenger://share?app_id=5303202981&display=popup&link=https://expertopc.com/?p=4396&redirect_uri=https://expertopc.com/?p=4396" rel="external noopener nofollow" title="Messenger" target="_blank" class="messenger-mob-share-btn messenger-share-btn " data-raw="fb-messenger://share?app_id=5303202981&display=popup&link={post_link}&redirect_uri={post_link}">
+<span class="share-btn-icon tie-icon-messenger"></span> <span class="screen-reader-text">Messenger</span>
+</a>
+<a href="https://www.facebook.com/dialog/send?app_id=5303202981&#038;display=popup&#038;link=https://expertopc.com/?p=4396&#038;redirect_uri=https://expertopc.com/?p=4396" rel="external noopener nofollow" title="Messenger" target="_blank" class="messenger-desktop-share-btn messenger-share-btn " data-raw="https://www.facebook.com/dialog/send?app_id=5303202981&display=popup&link={post_link}&redirect_uri={post_link}">
+<span class="share-btn-icon tie-icon-messenger"></span> <span class="screen-reader-text">Messenger</span>
+</a> </div>
+</div>
+<div id="share-buttons-mobile" class="share-buttons share-buttons-mobile">
+<div class="share-links  icons-only">
+<a href="https://www.facebook.com/sharer.php?u=https://expertopc.com/?p=4396" rel="external noopener nofollow" title="Facebook" target="_blank" class="facebook-share-btn " data-raw="https://www.facebook.com/sharer.php?u={post_link}">
+<span class="share-btn-icon tie-icon-facebook"></span> <span class="screen-reader-text">Facebook</span>
+</a>
+<a href="https://twitter.com/intent/tweet?text=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021&#038;url=https://expertopc.com/?p=4396" rel="external noopener nofollow" title="Twitter" target="_blank" class="twitter-share-btn " data-raw="https://twitter.com/intent/tweet?text={post_title}&amp;url={post_link}">
+<span class="share-btn-icon tie-icon-twitter"></span> <span class="screen-reader-text">Twitter</span>
+</a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&#038;url=https://expertopc.com/los-moviles-gaming-mas-populares-para-jugar-del-2021/&#038;title=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021" rel="external noopener nofollow" title="LinkedIn" target="_blank" class="linkedin-share-btn " data-raw="https://www.linkedin.com/shareArticle?mini=true&amp;url={post_full_link}&amp;title={post_title}">
+<span class="share-btn-icon tie-icon-linkedin"></span> <span class="screen-reader-text">LinkedIn</span>
+</a>
+<a href="https://pinterest.com/pin/create/button/?url=https://expertopc.com/?p=4396&#038;description=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021&#038;media=https://expertopc.com/wp-content/uploads/mejores-moviles-gaming-2019.jpg" rel="external noopener nofollow" title="Pinterest" target="_blank" class="pinterest-share-btn " data-raw="https://pinterest.com/pin/create/button/?url={post_link}&amp;description={post_title}&amp;media={post_img}">
+<span class="share-btn-icon tie-icon-pinterest"></span> <span class="screen-reader-text">Pinterest</span>
+</a>
+<a href="https://reddit.com/submit?url=https://expertopc.com/?p=4396&#038;title=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021" rel="external noopener nofollow" title="Reddit" target="_blank" class="reddit-share-btn " data-raw="https://reddit.com/submit?url={post_link}&amp;title={post_title}">
+<span class="share-btn-icon tie-icon-reddit"></span> <span class="screen-reader-text">Reddit</span>
+</a>
+<a href="https://api.whatsapp.com/send?text=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021%20https://expertopc.com/?p=4396" rel="external noopener nofollow" title="WhatsApp" target="_blank" class="whatsapp-share-btn " data-raw="https://api.whatsapp.com/send?text={post_title}%20{post_link}">
+<span class="share-btn-icon tie-icon-whatsapp"></span> <span class="screen-reader-text">WhatsApp</span>
+</a>
+<a href="https://telegram.me/share/url?url=https://expertopc.com/?p=4396&text=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021" rel="external noopener nofollow" title="Telegram" target="_blank" class="telegram-share-btn " data-raw="https://telegram.me/share/url?url={post_link}&text={post_title}">
+<span class="share-btn-icon tie-icon-paper-plane"></span> <span class="screen-reader-text">Telegram</span>
+</a>
+<a href="viber://forward?text=Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021%20https://expertopc.com/?p=4396" rel="external noopener nofollow" title="Viber" target="_blank" class="viber-share-btn " data-raw="viber://forward?text={post_title}%20{post_link}">
+<span class="share-btn-icon tie-icon-phone"></span> <span class="screen-reader-text">Viber</span>
+</a>
+<a href="https://line.me/R/msg/text/?Los%20m%C3%B3viles%20gaming%20m%C3%A1s%20populares%20para%20jugar%20del%202021%20https://expertopc.com/?p=4396" rel="external noopener nofollow" title="Line" target="_blank" class="line-share-btn " data-raw="https://line.me/R/msg/text/?{post_title}%20{post_link}">
+<span class="share-btn-icon tie-icon-line"></span> <span class="screen-reader-text">Line</span>
+</a> </div>
+</div>
+<div class="mobile-share-buttons-spacer"></div>
+<a id="go-to-top" class="go-to-top-button" href="#go-to-tie-body">
+<span class="tie-icon-angle-up"></span>
+<span class="screen-reader-text">Botón volver arriba</span>
+</a>
+</div>
+<aside class=" side-aside normal-side dark-skin dark-widgetized-area appear-from-right" aria-label="Barra lateral Secundaria" style="visibility: hidden;">
+<div data-height="100%" class="side-aside-wrapper has-custom-scroll">
+<a href="#" class="close-side-aside remove big-btn light-btn">
+<span class="screen-reader-text">Cerrar</span>
+</a>
+<div id="mobile-container">
+<div id="mobile-menu" class="hide-menu-icons has-custom-menu">
+<div class="menu-menu-container"><ul id="mobile-custom-menu" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-114 menu-item-has-icon"><a href="https://expertopc.com"> <span aria-hidden="true" class="tie-menu-icon fas fa-home"></span> Inicio</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2233"><a href="https://expertopc.com/category/noticias/">Noticias</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2235"><a href="https://expertopc.com/category/tutoriales/">Tutoriales</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-2232"><a href="https://expertopc.com/category/guias/">Guías</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2234"><a href="https://expertopc.com/category/tops/">Tops</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3067"><a href="https://expertopc.com/reviews/">Reviews</a></li>
+</ul></div> </div>
+<div id="mobile-social-icons" class="social-icons-widget solid-social-icons">
+<ul><li class="social-icons-item"><a class="social-link facebook-social-icon" rel="external noopener nofollow" target="_blank" href="https://www.facebook.com/Experto-PC-108495304223787"><span class="tie-social-icon tie-icon-facebook"></span><span class="screen-reader-text">Facebook</span></a></li><li class="social-icons-item"><a class="social-link twitter-social-icon" rel="external noopener nofollow" target="_blank" href="https://twitter.com/ExpertoPC10"><span class="tie-social-icon tie-icon-twitter"></span><span class="screen-reader-text">Twitter</span></a></li></ul>
+</div>
+<div id="mobile-search">
+<form role="search" method="get" class="search-form" action="https://expertopc.com/">
+<label>
+<span class="screen-reader-text">Buscar:</span>
+<input type="search" class="search-field" placeholder="Buscar &hellip;" value name="s" />
+</label>
+<input type="submit" class="search-submit" value="Buscar" />
+</form> </div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+<script type="rocketlazyloadscript" data-ad-client="ca-pub-9952581027087434" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-137441107-6"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-137441107-6');
+</script>
+<div id="is-scroller-outer"><div id="is-scroller"></div></div><div id="fb-root"></div> <div id="tie-popup-search-mobile" class="tie-popup tie-popup-search-wrap" style="display: none;">
+<a href="#" class="tie-btn-close remove big-btn light-btn">
+<span class="screen-reader-text">Cerrar</span>
+</a>
+<div class="popup-search-wrap-inner">
+<div class="live-search-parent pop-up-live-search" data-skin="live-search-popup" aria-label="Buscar">
+<form method="get" class="tie-popup-search-form" action="https://expertopc.com/">
+<input class="tie-popup-search-input " inputmode="search" type="text" name="s" title="Buscar por" autocomplete="off" placeholder="Buscar por" />
+<button class="tie-popup-search-submit" type="submit">
+<span class="tie-icon-search tie-search-icon" aria-hidden="true"></span>
+<span class="screen-reader-text">Buscar por</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/expertopc.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" async data-rocket-type="text/javascript" id="cookie-notice-front-js-before">
+var cnArgs = {"ajaxUrl":"https:\/\/expertopc.com\/wp-admin\/admin-ajax.php","nonce":"dbd7fbe893","hideEffect":"none","position":"bottom","onScroll":true,"onScrollOffset":100,"onClick":true,"cookieName":"cookie_notice_accepted","cookieTime":31536000,"cookieTimeRejected":2592000,"globalCookie":false,"redirection":false,"cache":true,"revokeCookies":true,"revokeCookiesOpt":"manual"};
+</script>
+<script type="rocketlazyloadscript" async data-rocket-type="text/javascript" src="https://expertopc.com/wp-content/plugins/cookie-notice/js/front.min.js?ver=2.4.9" id="cookie-notice-front-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://expertopc.com/wp-content/plugins/aawp/public/assets/js/scripts.min.js?ver=3.13" id="aawp-script-js" defer></script>
+<script type="text/javascript" id="tie-scripts-js-extra">
+/* <![CDATA[ */
+var tie = {"is_rtl":"","ajaxurl":"https:\/\/expertopc.com\/wp-admin\/admin-ajax.php","is_taqyeem_active":"1","is_sticky_video":"","mobile_menu_top":"","mobile_menu_active":"area_2","mobile_menu_parent":"","lightbox_all":"true","lightbox_gallery":"true","lightbox_skin":"dark","lightbox_thumb":"horizontal","lightbox_arrows":"true","is_singular":"1","autoload_posts":"1","reading_indicator":"true","lazyload":"","select_share":"","select_share_twitter":"","select_share_facebook":"","select_share_linkedin":"","select_share_email":"","facebook_app_id":"5303202981","twitter_username":"","responsive_tables":"true","ad_blocker_detector":"","sticky_behavior":"default","sticky_desktop":"","sticky_mobile":"true","sticky_mobile_behavior":"default","ajax_loader":"<div class=\"loader-overlay\"><div class=\"spinner-circle\"><\/div><\/div>","type_to_search":"","lang_no_results":"Sin resultados","sticky_share_mobile":"true","sticky_share_post":"true"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://expertopc.com/wp-content/themes/jannah/assets/js/scripts.min.js?ver=6.3.0" id="tie-scripts-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://expertopc.com/wp-content/themes/jannah/assets/ilightbox/lightbox.js?ver=6.3.0" id="tie-js-ilightbox-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://expertopc.com/wp-content/themes/jannah/assets/js/sliders.min.js?ver=6.3.0" id="tie-js-sliders-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://expertopc.com/wp-content/themes/jannah/assets/js/shortcodes.js?ver=6.3.0" id="tie-js-shortcodes-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://expertopc.com/wp-content/themes/jannah/assets/js/desktop.min.js?ver=6.3.0" id="tie-js-desktop-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://expertopc.com/wp-content/themes/jannah/assets/js/single.min.js?ver=6.3.0" id="tie-js-single-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://expertopc.com/wp-content/plugins/easy-table-of-contents/vendor/js-cookie/js.cookie.min.js?ver=2.2.1" id="ez-toc-js-cookie-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://expertopc.com/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?ver=1.9.2" id="ez-toc-jquery-sticky-kit-js" defer></script>
+<script type="text/javascript" id="ez-toc-js-js-extra">
+/* <![CDATA[ */
+var ezTOC = {"smooth_scroll":"1","visibility_hide_by_default":"","width":"auto","scroll_offset":"30","fallbackIcon":"<span style=\"display: flex;align-items: center;width: 35px;height: 30px;justify-content: center;direction:ltr;\"><svg style=\"fill: #f7f7f7;color:#f7f7f7\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" class=\"list-377408\" width=\"20px\" height=\"20px\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z\" fill=\"currentColor\"><\/path><\/svg><svg style=\"fill: #f7f7f7;color:#f7f7f7\" class=\"arrow-unsorted-368013\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"10px\" height=\"10px\" viewBox=\"0 0 24 24\" version=\"1.2\" baseProfile=\"tiny\"><path d=\"M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z\"\/><\/svg><\/span>"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://expertopc.com/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?ver=2.0.50-1688330657" id="ez-toc-js-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://expertopc.com/wp-content/plugins/jannah-autoload-posts/js/autoload-parent.js" defer></script>
+
+<div id="cookie-notice" role="dialog" class="cookie-notice-hidden cookie-revoke-hidden cn-position-bottom" aria-label="Cookie Notice" style="background-color: rgba(50,50,58,1);"><div class="cookie-notice-container" style="color: #fff"><span id="cn-notice-text" class="cn-text-container">Utilizamos cookies para asegurar que damos la mejor experiencia al usuario en nuestra web. Si sigues utilizando este sitio asumiremos que estás de acuerdo.</span><span id="cn-notice-buttons" class="cn-buttons-container"><a href="#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button" aria-label="¡Vale!" style="background-color: #00a99d">¡Vale!</a><a href="#" id="cn-refuse-cookie" data-cookie-set="refuse" class="cn-set-cookie cn-button" aria-label="No" style="background-color: #00a99d">No</a><a href="https://expertopc.com/politica-de-privacidad/" target="_blank" id="cn-more-info" class="cn-more-info cn-button" aria-label="Política de privacidad" style="background-color: #00a99d">Política de privacidad</a></span><span id="cn-close-notice" data-cookie-set="accept" class="cn-close-icon" title="No"></span></div>
+<div class="cookie-revoke-container" style="color: #fff"><span id="cn-revoke-text" class="cn-text-container">Puedes anular tu consentimiento en cualquier momento usando el botón de anular consentimiento.</span><span id="cn-revoke-buttons" class="cn-buttons-container"><a href="#" class="cn-revoke-cookie cn-button" aria-label="Anular consentimiento" style="background-color: #00a99d">Anular consentimiento</a></span>
+</div>
+</div>
+<script>window.lazyLoadOptions={elements_selector:"iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://expertopc.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360">',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>
+</body>
+</html>
